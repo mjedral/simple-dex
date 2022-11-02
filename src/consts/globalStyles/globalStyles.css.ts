@@ -5,7 +5,7 @@ globalStyle('*', {
 });
 
 globalStyle('html, body', {
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: 'Archivo, sans-serif',
   margin: 0,
   padding: 0,
 });

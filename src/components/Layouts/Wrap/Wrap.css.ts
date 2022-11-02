@@ -19,6 +19,11 @@ export const wrap = recipe({
         alignItems: 'center',
       },
     },
+    justify: {
+      center: {
+        justifyContent: 'center',
+      },
+    },
   },
 });
 

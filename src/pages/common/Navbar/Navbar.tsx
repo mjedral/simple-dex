@@ -4,6 +4,7 @@ import { HeaderSide } from '../../../components/Navbar/HeaderSide/HeaderSide';
 import { Logo } from '../../../components/Navbar/Logo/Logo';
 import { NavbarItem } from '../../../components/Navbar/NavbarItems/NavbarItem/NavbarItem';
 import { navbarItems } from '../../../components/Navbar/NavbarItems/NavbarItems';
+import { Wallet } from '../Wallet/Wallet';
 
 export const Navbar = () => {
   return (
@@ -15,6 +16,9 @@ export const Navbar = () => {
             {item.text}
           </NavbarItem>
         ))}
+      </HeaderSide>
+      <HeaderSide side={'right'}>
+        <Wallet />
       </HeaderSide>
     </Header>
   );

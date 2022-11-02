@@ -16,6 +16,6 @@ import { WrapProps } from './Wrap.types';
 //       }
 //   }, [direction, paddingBetween]);
 
-export const Wrap: React.FC<WrapProps> = ({ direction, align, children }) => {
-  return <div className={wrap({ direction, align })}>{children}</div>;
+export const Wrap: React.FC<WrapProps> = ({ direction, align, justify, children }) => {
+  return <div className={wrap({ direction, align, justify })}>{children}</div>;
 };

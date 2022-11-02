@@ -5,8 +5,9 @@ export const overlay = style({
   position: 'absolute',
   top: 0,
   left: 0,
-  height: '100%',
+  minHeight: '100vh',
   width: '100%',
   background: vars.colors.neutral.black,
   color: vars.colors.neutral.white,
+  overflow: 'hidden',
 });
