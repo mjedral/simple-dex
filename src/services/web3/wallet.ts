@@ -5,9 +5,9 @@ export const useWallet = () => {
   const { activate, account, library } = useWeb3();
 
   const connectWallet = useCallback(() => {
-    // if (metamask === undefined) throw new Error('Undefined connector');
+    if (metamask === undefined) throw new Error('Undefined connector');
     return activate(metamask, undefined, true);
   }, [activate]);
 
-  return { connectWallet, account, library };
+  return { connectWallet, account, library, activate };
 };

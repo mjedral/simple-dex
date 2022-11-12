@@ -11,8 +11,8 @@ import { Web3 } from './services/web3/Provider';
 
 function App() {
   return (
-    <Web3>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Web3>
         <Page className={`${themeClass} page`}>
           <Overlay>
             <Routes>
@@ -24,8 +24,8 @@ function App() {
             </Routes>
           </Overlay>
         </Page>
-      </BrowserRouter>
-    </Web3>
+      </Web3>
+    </BrowserRouter>
   );
 }
 
