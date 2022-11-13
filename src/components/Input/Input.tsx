@@ -1,14 +1,15 @@
 import React from 'react';
 import { Button } from '../Button/Button';
 import { container, input, maxButton } from './Input.css';
+import { InputProps } from './Input.types';
 import { InputContainer } from './InputContainer/InputContainer';
 
-export const Input = () => {
+export const Input = ({ label }: InputProps) => {
   return (
     <InputContainer>
-      <label>From</label>
+      <label>{label}</label>
       <div className={container}>
-        <input className={input} placeholder={'0.0'} />
+        <input type='number' className={input} placeholder={'0.0'} />
         <Button variant={'max'} className={maxButton}>
           Max
         </Button>
