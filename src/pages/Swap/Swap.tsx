@@ -6,14 +6,9 @@ import { Wrap } from '../../components/Layouts/Wrap/Wrap';
 import { SwapContainer } from '../../components/Swap/SwapContainer/SwapContainer';
 import { SwapHeader } from '../../components/Swap/SwapHeader/SwapHeader';
 import { useToken } from '../../services/contracts/DTPToken';
+import { useWeb3 } from '../../services/web3/web3';
 
 export const Swap = () => {
-  const { mintToken } = useToken();
-
-  const mintTokenFunc = async () => {
-    return await mintToken(BigNumber.from(100));
-  };
-
   return (
     <Wrap justify='center'>
       <SwapContainer>
@@ -21,7 +16,6 @@ export const Swap = () => {
         <Input label={'From'} />
         <Input label={'To'} />
         <Button variant={'swap'}>Enter an Amount</Button>
-        <button onClick={mintTokenFunc}></button>
       </SwapContainer>
     </Wrap>
   );

@@ -13,9 +13,19 @@ const getTokenContract = (library: Web3Library | undefined): DTP_Token | undefin
 };
 
 const useApprove = (token: DTP_Token | undefined) => {
-  if (token) {
-    return token.approve(DTPTokenContractAddress, ethers.constants.MaxUint256);
-  }
+  return useCallback(async () => {
+    if (token) {
+      return await token.approve(DTPTokenContractAddress, ethers.constants.MaxUint256);
+    }
+  }, [token]);
+};
+
+const useAllownce = (token: DTP_Token | undefined, account: string | undefined | null) => {
+  return useCallback(async () => {
+    if (token && account) {
+      return await token.allowance(account, DTPTokenContractAddress);
+    }
+  }, [token, account]);
 };
 
 const useMintToken = (token: DTP_Token | undefined) => {
@@ -23,7 +33,7 @@ const useMintToken = (token: DTP_Token | undefined) => {
     async (amount: BigNumber) => {
       try {
         if (token) {
-          return await token['mint(uint256)'](amount);
+          return await token['mint(uint256)'](amount, { maxFeePerGas: 0, maxPriorityFeePerGas: 0 });
         }
       } catch (err) {
         console.log(err);
@@ -42,8 +52,10 @@ export const useToken = () => {
   const mintToken = useMintToken(token);
 
   const balanceOf = useCallback(
-    async (ticket: string) => {
-      return token?.balanceOf(ticket);
+    async (account: string | undefined | null) => {
+      if (account) {
+        return token?.balanceOf(account);
+      }
     },
     [token],
   );
