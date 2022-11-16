@@ -1,5 +1,7 @@
 # Simple Dex
 
+APP IN PROGRESS!
+
 Simple Dex as the name suggests is a simple test dex that is designed to swap tokens. For now it works only on Goerli network, but soon I hope it will also be on the Optimism, Starknet, Arbitrum test networks.
 
 # Import
