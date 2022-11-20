@@ -1,6 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../../../consts/theme/theme.css';
-import { px } from '../../../tools/css';
+import { px } from '../../tools/css';
 
 export const header = style({
   display: 'flex',

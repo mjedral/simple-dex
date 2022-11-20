@@ -11,14 +11,16 @@ import { useWeb3 } from '../../../services/web3/web3';
 import { Wallet } from '../Wallet/Wallet';
 
 export const Navbar = () => {
-  const { mintToken, balanceOf, approve } = useToken();
+  const { mintToken, balanceOf, approve, allowance } = useToken();
   const { account } = useWeb3();
+
+  console.log(allowance());
 
   console.log(balanceOf(account));
 
   const mintTokenFunc = async () => {
     try {
-      return await mintToken(BigNumber.from(1000000000000));
+      return await mintToken(BigNumber.from('100000000'));
     } catch (err) {
       console.log(err);
     }
